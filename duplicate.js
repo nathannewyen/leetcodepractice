@@ -1,13 +1,12 @@
 const nums = [1,1,2];
 
 function removeDuplicates(nums) {
-    const unique = {};
-    for (let i = 0; i < nums.length; i++) {
-        if(!unique[nums[i]]) {
-            unique[nums[i]] = true;
+    let uniqueArray = [];
+    for(let i = 0; i < nums.length; i++) {
+        if(!uniqueArray.includes(nums[i])) {
+            uniqueArray.push(nums[i])
         }
     }
-    let newArr = Object.keys(unique).map(Number);
-    return newArr;
+    return uniqueArray;
 }
 console.log(removeDuplicates(nums));
